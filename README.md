@@ -1,13 +1,17 @@
-# NHS-Hack-day---mentoring-app
-NHS hack day Cardiff 2025 - a mentoring app for NHS staff
-
-Healthcare Mentoring
+# Mentoring in healthcare app - NHS hack day Cardiff 2025
 
 # App name - TorMentor!
 
+The app is indented to facilitate mentoring in a healthcare setting.
+
+Much of mentoring is not well recorded or measured, and so the impacts are hard to evaluate.
+This app is indented to make mentoring more accessible and provide data to (hopefully!) demonstrate efficacy. 
+
+# Features
+
 - Facilitate scheduling meetings
-    - Sign up with your GMC ID, availability, in-person/virtual
-    - Then given a list of available mentors to choose
+    - Sign up with your GMC ID, availability, in-person/virtual/no preference
+    - Then given a list of available mentors to choose and schedule first meeting
 
 # Physical design
 
@@ -28,9 +32,9 @@ Healthcare Mentoring
     - brief blurb about self (to be seen mentors/mentees)
     - protected characteristics (optional)
 
-# Noticiation post meeting
+# Notification post meeting
 
-2 Hours after a meeting is schdual led to end:
+2 Hours after a meeting is schedule led to end:
     - Both mentor and mentee receive a notification to provide feedback on meeting
         - Overall how satisfied with the meeting (1-10)
         - For mentee
