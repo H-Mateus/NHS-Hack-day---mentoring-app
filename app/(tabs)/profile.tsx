@@ -1,6 +1,6 @@
 
-import { Text, View,TextInput, Modal, FlatList,Image, ActivityIndicator, Button, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-import { Link } from 'expo-router'; 
+import { Text, View,TextInput, Modal, FlatList,Image, ActivityIndicator, Button, TouchableOpacity, StyleSheet, Dimensions, Platform} from 'react-native';
+import { Link } from 'expo-router';
 import React, {useState, useEffect} from "react";
 const API_ENDPOINT = 'https:randomuser.me/api/?results=30';
 //import filter from "lodash.filter";
@@ -36,7 +36,7 @@ export default function Profile() {
 
   if( isLoading ) {
     return (
-      
+
       <View style={styles.container}>
         <ActivityIndicator size={"large"} color="#5500dc" />
       </View>
@@ -53,7 +53,7 @@ export default function Profile() {
   }
   return (
     <View style={styles.container}>
-      <TextInput 
+      <TextInput
       placeholder="Search"
       clearButtonMode="always"
       style={styles.searchBox}
@@ -61,23 +61,23 @@ export default function Profile() {
       autoCorrect={false}
       value={searchQuery}
       onChangeText={(query) => handleSearch(query)}/>
-      
+
       <FlatList data={data} keyExtractor={(item) => item.login.username} renderItem={({item}) => (
         <View style={styles.card}>
 
-          <Image source={{uri: item.picture.thumbnail}}/> 
+          <Image source={{uri: item.picture.thumbnail}}/>
           <Text>{item.name.first} {item.name.last}</Text>
-    
-     
+
+
         </View>
 
       )}
 
-        
+
       />
 
-      
-      
+
+
 
 
 
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     marginTop: 20,
     padding: 10,
-    width: Dimensions.get('window').width * 0.8
+    width: "80%"
   },
   desc: {
       fontSize: 16,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
       backgroundColor: "white",
       borderRadius: 8,
       alignItems: "center",
-      
+
     },
     content: {
       flex: 1,
@@ -132,18 +132,20 @@ const styles = StyleSheet.create({
       backgroundColor: '#25292e',
       justifyContent: 'flex-start', // Align items to the top
       paddingTop: 20,
+      width: Platform.OS === 'web' ? '100vw' : '100%',
+      height: Platform.OS === 'web' ? '100vh' : '100%',
       alignItems: 'center'
     },
     text: {
       color: '#fff',
     },
     button: {
-  
+
       backgroundColor: 'white',
       borderRadius: 10,
       marginTop: 20,
       padding: 10,
-      width: Dimensions.get('window').width * 0.8
+      width: "80%"
     },
     buttonText: {
       color: '#25292e',
@@ -167,4 +169,3 @@ const styles = StyleSheet.create({
       elevation: 5,
     },
 });
-
