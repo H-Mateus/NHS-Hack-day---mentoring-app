@@ -1,21 +1,21 @@
 import { Text, View, Modal, Button, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-import { Link } from 'expo-router'; 
+import { Link } from 'expo-router';
 import React, {useState} from "react";
 
 export default function Index() {
- 
+
   const [isModal1Visible, setModal1Visible] = useState(false);
   const [isModal2Visible, setModal2Visible] = useState(false);
   return (
     <View style={styles.container}>
-    
-    
+
+
     <Modal animationType="slide"
         transparent={true}
         visible={isModal1Visible}
         onRequestClose={() => setModal1Visible(false)}
-        
-        
+
+
       >
     <View style={styles.content}>
           <View style={styles.card}>
@@ -40,18 +40,18 @@ export default function Index() {
               <Text style={[styles.text, { color: "black" }]}>Close</Text>
             </TouchableOpacity>
           </View>
-          
+
         </View>
 
-        
+
       </Modal>
 
       <Modal animationType="slide"
         transparent={true}
         visible={isModal2Visible}
         onRequestClose={() => setModal2Visible(false)}
-        
-        
+
+
       >
     <View style={styles.content}>
           <View style={styles.card}>
@@ -104,7 +104,7 @@ export default function Index() {
                   alignItems: "center",
                   borderRadius: 5,
                   marginTop: 5,
-              
+
                   width: "5%",
                   backgroundColor: "rgba(221, 215, 215, 0.5)",
                 }
@@ -114,13 +114,13 @@ export default function Index() {
               <Text style={{justifyContent: "center", alignItems: "center",color: "black" }}>Close</Text>
             </TouchableOpacity>
           </View>
-          
+
         </View>
 
-        
+
       </Modal>
-      
-      
+
+
       <TouchableOpacity style={styles.button} onPress={() => setModal1Visible(true)}>
             <Text style={{paddingLeft: 20,fontSize: 32, fontWeight: 'bold'}}>+</Text>
             <Text style={styles.buttonText}>Schedule New Meeting </Text>
@@ -140,7 +140,7 @@ export default function Index() {
         <br />
         Mentor : Dr Jane Doe<br /></Text>
       </TouchableOpacity>
-    
+
 {/*
         <Link href="/meeting" style={styles.button}>
         <Text style={styles.buttonText}>Upcoming Meeting <br />
@@ -159,11 +159,11 @@ export default function Index() {
         </Link>
 */}
     </View>
-      
-        
-        
-    
-    
+
+
+
+
+
   );
 }
 
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 8,
     alignItems: "center",
-    
+
   },
   content: {
     flex: 1,
@@ -201,7 +201,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start', // Align items to the top
     paddingTop: 20,
     alignItems: 'center',
-    
+    width: Platform.OS === 'web' ? '100vw' : '100%',
+    height: Platform.OS === 'web' ? '100vh' : '100%',
   },
   text: {
     color: '#fff',
@@ -236,4 +237,3 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
 });
-
