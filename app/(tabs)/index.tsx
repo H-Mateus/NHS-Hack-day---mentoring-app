@@ -201,8 +201,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start', // Align items to the top
     paddingTop: 20,
     alignItems: 'center',
-    width: Platform.OS === 'web' ? '100vw' : '100%',
-    height: Platform.OS === 'web' ? '100vh' : '100%',
+    width: "100%",
+    height: "100%",
   },
   text: {
     color: '#fff',
