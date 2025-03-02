@@ -193,13 +193,15 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(79, 59, 153, 0.5)",
+    width: Dimensions.get('window').width * 0.8
   },
   container: {
     flex: 1,
     backgroundColor: '#25292e',
     justifyContent: 'flex-start', // Align items to the top
     paddingTop: 20,
-    alignItems: 'center'
+    alignItems: 'center',
+    
   },
   text: {
     color: '#fff',

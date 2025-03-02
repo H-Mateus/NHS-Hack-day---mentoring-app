@@ -3,6 +3,7 @@ import { Text, View,TextInput, Modal, FlatList,Image, ActivityIndicator, Button,
 import { Link } from 'expo-router'; 
 import React, {useState, useEffect} from "react";
 const API_ENDPOINT = 'https:randomuser.me/api/?results=30';
+//import filter from "lodash.filter";
 
 export default function Profile() {
   const [isLoading,setIsLoading] = useState(false);
@@ -62,7 +63,8 @@ export default function Profile() {
       onChangeText={(query) => handleSearch(query)}/>
       
       <FlatList data={data} keyExtractor={(item) => item.login.username} renderItem={({item}) => (
-        <View>
+        <View style={styles.card}>
+
           <Image source={{uri: item.picture.thumbnail}}/> 
           <Text>{item.name.first} {item.name.last}</Text>
     
