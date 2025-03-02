@@ -1,5 +1,5 @@
 
-import { Text, View,TextInput, Modal, FlatList,Image, ActivityIndicator, Button, TouchableOpacity, StyleSheet, Dimensions, Platform} from 'react-native';
+import { Text, View,TextInput, Modal, FlatList,Image, ActivityIndicator, Button, TouchableOpacity, StyleSheet, Dimensions, Platform } from 'react-native';
 import { Link } from 'expo-router';
 import React, {useState, useEffect} from "react";
 const API_ENDPOINT = 'https:randomuser.me/api/?results=30';
