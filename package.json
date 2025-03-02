@@ -9,10 +9,10 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "deploy": "gh-pages --nojekyll -d dist",
-    "predeploy": "expo export -p web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "deploy": "gh-pages --nojekyll -d dist",
+    "predeploy": "expo export -p web"
   },
   "jest": {
     "preset": "jest-expo"
