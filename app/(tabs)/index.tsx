@@ -1,4 +1,4 @@
-import { Text, View, Modal, Button, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, Modal, Button, TouchableOpacity, StyleSheet, Dimensions, Platform } from 'react-native';
 import { Link } from 'expo-router';
 import React, {useState} from "react";
 
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(79, 59, 153, 0.5)",
-    width: Dimensions.get('window').width * 0.8
+    width: "100%",
   },
   container: {
     flex: 1,
@@ -201,8 +201,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start', // Align items to the top
     paddingTop: 20,
     alignItems: 'center',
-    width: "100%",
-    height: "100%",
+    width: Platform.OS === 'web' ? '100vw' : '100%',
+    height: Platform.OS === 'web' ? '100vh' : '100%',
   },
   text: {
     color: '#fff',
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginTop: 20,
     padding: 10,
-    width: Dimensions.get('window').width * 0.8
+    width: "80%",
   },
   buttonText: {
     color: '#25292e',
